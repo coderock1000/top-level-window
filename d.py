@@ -54,6 +54,7 @@ def topwin():
             note500 = amount // 500
             amount %= 500
             note100 = amount // 100
+            amount %= 100
 
             t1.delete(0, END)
             t2.delete(0, END)
@@ -62,9 +63,10 @@ def topwin():
             t1.insert(END, str(note2000))
             t2.insert(END, str(note500))
             t3.insert(END, str(note100))
-        except ValueError:
-            messagebox.showerror("Error", "Please enter a valid number.")
 
+        except ValueError :
+            messagebox.showerror("Error", "Please enter a valid number.")
+            
     btn = Button(top, text='Calculate', command=calculator, bg='brown', fg='white')
 
     label.place(x=230, y=50)
@@ -83,4 +85,3 @@ def topwin():
     top.mainloop()
 
 root.mainloop()
-
